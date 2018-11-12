@@ -11,7 +11,7 @@ import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
 @DefaultUrl("http://en.wiktionary.org/wiki/Wiktionary")
-public class DictionaryPage extends PageObject {
+public class WikiDictionaryPage extends PageObject {
 
     @FindBy(name="search")
     private WebElementFacade searchTerms;
@@ -19,11 +19,11 @@ public class DictionaryPage extends PageObject {
     @FindBy(name="go")
     private WebElementFacade lookupButton;
 
-    public void enter_keywords(String keyword) {
+    public void enterKeywords(String keyword) {
         searchTerms.type(keyword);
     }
 
-    public void lookup_terms() {
+    public void clickSearchButton() {
         lookupButton.click();
     }
 
