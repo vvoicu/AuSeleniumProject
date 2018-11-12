@@ -31,7 +31,7 @@ public class TC0001SearchWikiTest {
     }
 
     @Test
-    public void searchingByKeywordBananaShouldDisplayTheCorrespondingArticleTest() {
+    public void searchingByKeywordPearShouldDisplayTheCorrespondingArticleTest() {
         wikiSteps.navigateToWikiUrl();
         wikiSteps.searchFor("pear");
         wikiSteps.verifyDefinition("An edible fruit produced by the pear tree, similar to an apple but elongated towards the stem.");

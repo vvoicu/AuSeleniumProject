@@ -1,4 +1,3 @@
-
 @Narrative(
         title = "Search for definitions",
         text = {"In order to impress people",
@@ -7,5 +6,4 @@
         cardNumber = "#123"
 )
 package ecs.runners.tests.wiktionary;
-
 import net.thucydides.core.annotations.Narrative;
