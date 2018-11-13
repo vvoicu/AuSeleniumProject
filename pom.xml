@@ -135,10 +135,6 @@
 		</plugins>
 	</build>
 	
-	
-	
-	
-	
 <!-- 		These profiles will be picked up automatically and will configure the path based on the OS it runs -->
 		<profiles>
 		<profile>
@@ -179,6 +175,4 @@
 			</properties>
 		</profile>
 	</profiles>
-	
-	
 </project>

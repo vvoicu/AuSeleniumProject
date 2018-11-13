@@ -7,10 +7,8 @@ import org.openqa.selenium.By;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.WebElementFacade;
-import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
-@DefaultUrl("http://en.wiktionary.org/wiki/Wiktionary")
 public class WikiDictionaryPage extends PageObject {
 
     @FindBy(name="search")

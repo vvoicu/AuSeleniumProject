@@ -5,6 +5,7 @@ import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.hasItem;
 
 import ecs.apps.frontend.wiktionary.pages.WikiDictionaryPage;
+import ecs.tools.ConfigUtils;
 import net.thucydides.core.annotations.Step;
 
 public class WikiSteps {
@@ -28,7 +29,7 @@ public class WikiSteps {
 
     @Step
     public void navigateToWikiUrl() {
-    	wikiDictionaryPage.getDriver().get("http://en.wiktionary.org/wiki/Wiktionary");
+    	wikiDictionaryPage.getDriver().get(ConfigUtils.getProperty("base.url.wiktionary"));
     }
 
     @Step
