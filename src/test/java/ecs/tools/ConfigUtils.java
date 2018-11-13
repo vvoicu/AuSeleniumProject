@@ -22,9 +22,9 @@ public class ConfigUtils {
 	private static Properties prop = new Properties();
 	private static InputStream input = null;
 
-	// in case you want to keep track of your keys
+	// in case you want to keep track of your keys. there's also a method further down.
 	public enum ConfigKeys {
-		BASE_URL_GOOGLE, BASE_URL_WIKTIONARY, BASE_URL, DB_USER, DB_PASS, DB_URL;
+		BASE_URL_GOOGLE, BASE_URL_WIKTIONARY, BASE_URL;
 	}
 
 	/**
@@ -63,6 +63,6 @@ public class ConfigUtils {
 	}
 
 	public static String getProperty(ConfigKeys propertyKey) {
-		return getProperty(propertyKey).toString();
+		return getProperty(propertyKey.toString());
 	}
 }

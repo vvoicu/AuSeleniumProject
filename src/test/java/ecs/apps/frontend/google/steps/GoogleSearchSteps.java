@@ -11,5 +11,10 @@ public class GoogleSearchSteps {
 	public void inputSearchTerm(String search) {
 		googleHomePage.inputSearchTerm(search);
 	}
+
+	@Step
+	public void navigateToUrl(String url) {
+		googleHomePage.getDriver().get(url);
+	}
 	
 }
