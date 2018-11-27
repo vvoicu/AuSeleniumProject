@@ -24,7 +24,7 @@ public class ConfigUtils {
 
 	// in case you want to keep track of your keys. there's also a method further down.
 	public enum ConfigKeys {
-		BASE_URL_GOOGLE, BASE_URL_WIKTIONARY, BASE_URL;
+		BASE_URL_GOOGLE, BASE_URL_WIKTIONARY, BASE_URL, BASE_URL_REQRES;
 	}
 
 	/**
@@ -44,8 +44,10 @@ public class ConfigUtils {
 	public static String getProperty(String propertyKey) {
 		String result = "";
 		String configFile = System.getProperty("configFile") == null ? "local" : System.getProperty("configFile");
+		String fullPath = Constants.CONFIG_RESOURCES_PATH + configFile + "-config.properties";
+		
 		try {
-			input = new FileInputStream(Constants.CONFIG_RESOURCES_PATH + configFile + "-config.properties");
+			input = new FileInputStream(fullPath);
 			prop.load(input);
 			result = prop.getProperty(propertyKey);
 		} catch (IOException ex) {

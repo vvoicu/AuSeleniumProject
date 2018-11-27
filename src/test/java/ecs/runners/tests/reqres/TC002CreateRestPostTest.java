@@ -7,22 +7,24 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
+import org.symphonyoss.symphony.jcurl.JCurl;
 
 import ecs.apps.backend.reqres.post.create.ReqresCreateData;
 import ecs.tools.ConfigUtils;
 import ecs.tools.ConfigUtils.ConfigKeys;
-import ecs.tools.connectors.RestAssuredConnector;
+import ecs.tools.connectors.JCurlConnector;
 
 @RunWith(JUnit4.class)
-public class TC002CreatePostTest {
+public class TC002CreateRestPostTest {
 
-	private RestAssuredConnector connector = new RestAssuredConnector();
+	private JCurlConnector jcurlConnector = new JCurlConnector();
 	
 	private String requestBody;
 	private String requestUri;
 
 	@Before
 	public void setupData() {
+
 		// This Method will actually generate new sets of data each time the test is ran
 		requestBody = ReqresCreateData.generateCreatePostBody();
 
@@ -33,8 +35,8 @@ public class TC002CreatePostTest {
 	@Test
 	public void tc002CreatePostTest() throws CertificateParsingException, IOException {
 
-		connector.postRequest(requestUri, requestBody);
+		JCurl.Response response = jcurlConnector.postRequest(requestUri, requestBody);
 
-		System.out.println("Response: " + RestAssuredConnector.response.asString());
+		System.out.println("Response: " + response.getOutput());
 	}
 }
